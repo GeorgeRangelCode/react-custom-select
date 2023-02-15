@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SearchSelectDropdown from "./components/Select";
 
-function App() {
+const options = [
+  { value: "option1", label: "Option 1" },
+  { value: "option2", label: "Option 2" },
+  { value: "option3", label: "Option 3" },
+];
+
+const App = () => {
+  const handleOptionChange = (option: any) => {
+    console.log(option);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchSelectDropdown options={options} onChange={handleOptionChange} />
     </div>
   );
-}
+};
 
 export default App;
